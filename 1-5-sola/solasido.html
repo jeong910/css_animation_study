@@ -32,9 +32,19 @@
             position:relative; top:400px;
         }
         /* class */
-
+        .slid_wrap .slide_c .slide1 {animation:bg_scale 2s linear both;}
+        .slid_wrap .slide_c .slide p {animation:txt 1s forwards;}
         /* animation */
-
+        @keyframes bg_scale {
+            0% {background-size:100%;}
+            100% {background-size:120%;}
+            /* scale이 아닌 background-size로 해야하는 이유 */
+            /* transform:scale은 bg뿐 아니라 자식, 자손에 크기까지 영행을 주기 때문 */
+        }
+        @keyframes txt {
+            0% {opacity:0; transform:translateY(0) scale(1);}
+            100% {opacity:1; transform:translateY(-30px) scale(1.2);}
+        }
     </style>
     <script>
         window.onload=function(){

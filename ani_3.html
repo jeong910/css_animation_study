@@ -15,14 +15,27 @@
         }
         main span {width:100px; height:100px; background:lightgray; padding:10px;}
         main .target1 {transition:background 1s 0.5s;}
-        main .target2 {animation:right500 1s linear 3 alternate-reverse;}
-        main .target3 {}
-        main .target4 {}
-        main .target5 {}
+        main .target2 {animation:right500 1s linear 3 alternate both;}
+        main .target3 {animation:left_top_right 1s linear 3 reverse;}
+        main .target4 {animation:bg_rotate 1s;}
+        main .target5 {animation:opacity 2s;}
         /* animation + @keyframes */
         @keyframes right500 {
             0% {transform:translateX(0);}
             100% {transform:translateX(500px);}
+        }
+        @keyframes left_top_right {
+            0% {transform:translate(0,0);}
+            50% {transform:translate(250px, -100px);}
+            100% {transform:translate(500px, 0);}
+        }
+        @keyframes bg_rotate {
+            0% {transform:rotate(30deg); background:pink;}
+            100% {transform:rotate(70deg); background:skyblue;}
+        }
+        @keyframes opacity {
+            0% {opacity:0; font-size: 1rem;}
+            100% {opacity:1; font-size:3rem;} 
         }
         /* @keyframes 작성위치 style맨아래 또는 외부스타일분리 */
         /* 1. 원하는 애니메이션 시작 끝 장면 정하기 */
